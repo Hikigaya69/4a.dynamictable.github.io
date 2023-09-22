@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+</head>
+
+<style>
+  
+    body{
+
+        text-align: center;
+
+    }
+table{
+    margin-left: 163px;
+
+margin-top: 54px;
+    padding-top: 500px;
+border-collapse: collapse;
+width: 50%;
+margin-bottom: 10px;
+
+}
+th,td{
+    
+    
+
+border: 1px solid black;
+padding: 8px;
+text-align: center;
+
+}
+th{
+
+    background-color: rgb(214, 191, 191);
+}
+
+tr:hover{
+
+    background-color: rgb(184, 173, 173);
+
+}
+
+button{
+    padding: 5px,10px;
+    background-color: #0c0b0b;
+    color:rgb(255, 247, 247);
+    border: none;
+    cursor: pointer;
+}
+</style>
+<body>
+    <h1 style="text-align: center;">Dynamic Table</h1>
+    <button onclick="addRow()">Add Row</button>
+    <button onclick="removeRow()">Remove Row</button>
+    <table id="dynamic-table">
+        <thead>
+
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+<tbody>
+
+    <!-- initial row -->
+    <tr>
+        <td><input type="text" name="name[]"></td>
+        <td><input type="number" name="age[]"></td>
+        <td><button onclick="deleteRow()">Delete</button></td>
+
+
+    </tr>
+</tbody>
+
+    </table>
+<script>
+
+    function addRow(){
+
+        var table=document.getElementById("dynamic-table").getElementsByTagName('tbody')[0];
+        var newRow=table.insert.insertRow(table.rows.length);
+        var nameCell1=newRow.insertCell(0);
+        var ageCell2=newRow.insertCell(1);
+        var actionCell=newRow.insertCell(2);
+         
+
+        nameCell.innerHTML= '<input type="text" name="name[]"/>';
+        ageCell.innerHTML= '<input type="number" name="age[]"/>';
+        actionCell.innerHTML= '<button onclick="deleteRow(this)">Delete</button>';
+
+
+    }
+
+
+    function removeRow(){
+        var row= button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+
+
+    }
+
+    function deleteRow(button){
+
+        
+
+        var table=document.getElementById("dynamic-table").getElementsByTagName('tbody')[0];
+        if(table.rows.length>1)
+        {
+            table.deleteRow(table.rows.length-1);
+        }
+    }
+
+</script>
+
+
+
+</body>
+</html>
